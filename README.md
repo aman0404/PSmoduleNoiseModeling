@@ -1,8 +1,22 @@
 # SSA Noise Toy Model — CMS Phase-2 PS Modules
 
-A Python-based analytical/statistical toy model for simulating noise hit 
-occupancy in Short Strip ASIC (SSA) chips of CMS Phase-2 Outer Tracker 
-Pixel-Strip (PS) modules.
+A Python-based analytical/statistical toy model for simulating correlated 
+noise occupancy in Short Strip ASIC (SSA) chips of CMS Phase-2 Outer Tracker 
+Pixel-Strip (PS) modules, designed to be interfaced with CMS official 
+simulation at the digitization step.
+
+# Motivation
+
+In the CMS Phase-2 simulation chain, the digitization step converts 
+simulated energy deposits into detector signals and adds noise. Standard 
+digitizers typically treat channel noise as uncorrelated. However, SSA chips 
+in PS module hybrids exhibit significant correlated noise structures — both 
+within a chip (common-mode across subchip regions) and across chips on the 
+same hybrid.
+
+This toy model captures these correlations analytically and is intended to 
+be stitched into the CMS digitization framework, providing a more realistic 
+noise background for tracking and trigger performance studies.
 
 ## Overview
 
@@ -71,3 +85,13 @@ This model is developed in the context of the CMS Phase-2 Outer Tracker
 upgrade. It is intended for threshold optimisation studies and for 
 understanding the impact of correlated noise on the noise occupancy of 
 PS module hybrids.
+
+## What the Model Adds to Digitization
+
+- Replaces the uncorrelated noise assumption in the SSA 
+  digitizer with a physically motivated correlated noise model
+- Allows threshold-dependent noise occupancy to be injected at the 
+  digitization step using real calibration data
+- Enables studies of how correlated noise affects strip hit rates, 
+  cluster sizes, and ultimately tracking efficiency and fake rate in 
+  the Phase-2 Outer Tracker
