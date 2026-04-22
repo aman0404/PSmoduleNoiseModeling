@@ -5,6 +5,13 @@ noise occupancy in Short Strip ASIC (SSA) chips of CMS Phase-2 Outer Tracker
 Pixel-Strip (PS) modules, designed to be interfaced with CMS official 
 simulation at the digitization step.
 
+## 📖 Documentation & Step-by-Step Instructions
+ 
+For a full description of the workflow — including how to extract thresholds,
+compute correlation matrices, estimate f_corr, run the model, and validate
+against real data — please refer to the
+**[Wiki](https://github.com/aman0404/PSmoduleNoiseModeling/wiki/SSA-Noise-Toy-Model-%E2%80%94-Wiki)**.
+
 # Motivation
 
 In the CMS Phase-2 simulation chain, the digitization step converts 
